@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="screen-transition" >
+    <img src="{% static 'img\start.png'%}" usemap="#start1">
+    <map name='start1'>
+      <a href="{% url 'green:main' %}"><area shape='rect' coords="529,580,665,632"></a>
+    </map>
+  </div>
+
+
+{% endblock%}

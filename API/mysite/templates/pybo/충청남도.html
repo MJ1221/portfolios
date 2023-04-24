@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .image-container {
+      position: relative;
+    }
+    .image {
+      position: absolute;
+    }
+    .image:first-child {
+      top: 10px;
+      left: 10px;
+    }
+    .image:last-child {
+      top: 220px;
+      left: 100px;
+    }
+
+    .container {
+      position: absolute;
+      height: 70vh;
+      width: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #my-table {
+      position: absolute;
+      top: 223px;
+      right: -980px;
+    }
+  </style>
+  
+
+
+  <div style="position: absolute" >
+    <img src="{% static 'img\main3.png'%}">
+  </div> 
+
+  <div class="container1">
+    <a href="{% url 'green:start'%}">
+      <img src="{% static 'img\home.png'%}">
+    </a>
+  </div>
+  <div class="container2">
+    <a href="{% url 'green:back'%}">
+      <img src="{% static 'img\back.png'%}">
+    </a>
+  </div>
+
+  <div class="container">
+    <table  width ="1000" height="350"  id= "my-table">
+      <tr align="center">
+      <td style= "padding : 10px">
+        <a href="{% url 'green:farm_nm2'%}?w=계룡시">
+          <img src="{% static 'img\충청남도\계룡시.png'%}"></a>
+      </td>
+      <td style= "padding : 10px">
+        <a href="{% url 'green:farm_nm2'%}?w=공주시">
+          <img src="{% static 'img\충청남도\공주시.png'%}"></a>
+      </td>
+   
+        <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=금산군">
+          <img src="{% static 'img\충청남도\금산군.png'%}"></a>
+        </td>
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=논산시">
+            <img src="{% static 'img\충청남도\논산시.png'%}"></a>
+        </td>
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=당진시">
+            <img src="{% static 'img\충청남도\당진시.png'%}"></a>
+        </td>
+     
+          <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=보령시">
+            <img src="{% static 'img\충청남도\보령시.png'%}"></a>
+          </td>
+        </tr>  
+
+      <tr align="center">
+            <td style= "padding : 10px">
+              <a href="{% url 'green:farm_nm2'%}?w=부여군">
+                <img src="{% static 'img\충청남도\부여군.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+              <a href="{% url 'green:farm_nm2'%}?w=서산시">
+                <img src="{% static 'img\충청남도\서산시.png'%}"></a>
+            </td>
+            <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=서천군">
+                <img src="{% static 'img\충청남도\서천군.png'%}"></a>
+              </td>
+            </tr>
+
+        <tr align="center">
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=아산시">
+                 <img src="{% static 'img\충청남도\아산시.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=예산군">
+                 <img src="{% static 'img\충청남도\예산군.png'%}"></a>
+            </td> 
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=천안시">
+                 <img src="{% static 'img\충청남도\천안시.png'%}"></a>
+            </td> 
+        </tr>
+
+        <tr align="center">
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=청양군">
+                 <img src="{% static 'img\충청남도\청양군.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=태안군">
+                 <img src="{% static 'img\충청남도\태안군.png'%}"></a>
+            </td> 
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=홍성군">
+                 <img src="{% static 'img\충청남도\홍성군.png'%}"></a>
+            </td> 
+        </tr>
+{% endblock%}

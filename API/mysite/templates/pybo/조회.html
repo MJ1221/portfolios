@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  @font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url({% static 'img\Cafe24Ssurround.ttf'%}) format('truetype');
+  }
+  body {
+    font-family: 'Cafe24Ssurround';
+    font-size: 20px; /* 폰트의 크기를 16px로 설정 */
+    font-weight: lighter;
+    color : Sienna;
+  }
+  .container {
+    position: relative;
+    left: -13px;
+  }
+
+  .grid-container {
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    display: grid;
+    bottom: 100px;
+    grid-gap: 80px;
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: repeat(10, 500px);
+    max-height: 650px;
+    overflow-y: scroll;
+  }
+ ::-webkit-scrollbar{
+    display:none;
+  }
+  .grid-item {
+    border: 5px solid FloralWhite;
+    background-color:	#FFFAF0;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding-top : 20px
+  }
+
+  .container3 {
+    position: absolute;
+    height: 13%;
+    width: 175.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:0;
+  }
+  #mapping {
+    display: flex;
+  }
+
+  
+</style>
+
+<div class="container">
+  <img src="{% static 'img\체험마을목록.png'%}">
+
+  <div>
+    <div class="container3">
+      <a href="{% url 'green:start'%}">
+        <img src="{% static 'img\home.png'%}">
+      </a>
+    </div>
+
+    <div class="grid-container" style=" width: 1140.5px; height: 650px;  text-align:left; ">
+        {% for data in data_list %}
+          <div class="grid-item">
+            &nbsp;&nbsp;마을이름 : &nbsp;{{ data.0 }}<br>
+            &nbsp;&nbsp;주소 : &nbsp;{{ data.1 }}<br>
+            &nbsp;&nbsp;체험활동 :&nbsp;{{ data.2 }}<br>
+            &nbsp;&nbsp;대표자 : &nbsp; {{ data.3 }}<br>
+            &nbsp;&nbsp;전화번호 : &nbsp;{{ data.4 }}<br>
+            &nbsp;&nbsp;홈페이지 : <a href="{{ data.5 }}">{{ data.5 }}</a>
+            
+            <div class="map_wrap">
+              <div id="mapWrapper" style="width:50%;height:300px;float:left">
+                <div id="map1_{{ forloop.counter }}" style=" width:100%;height:200px;"></div>
+              </div>
+            <div id="rvWrapper" style="width:50%;height:300px;float:left">
+              <div id="map2_{{ forloop.counter }}" style=" width:100%;height:200px;"></div>
+            </div>
+              </div>
+            </div>
+  
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+    {% for location in locations %}
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a83c4c40fa3234752cfba32f6ee113ff"></script>
+    <script>
+      function createMap(signgunm, latitude, longitude) {
+        var mapContainer = document.getElementById(signgunm),
+            mapOption = {
+              center: new kakao.maps.LatLng(latitude, longitude),
+              level: 2
+            };
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+      }
+      function createRoadview(signgunm, latitude, longitude) {
+        var rvContainer = document.getElementById(signgunm),
+            rvOption = {
+              pano: 0,
+              panoId: null,
+              cne: new kakao.maps.LatLng(latitude, longitude),
+              pov: {
+                pan: 0,
+                tilt: 0,
+                zoom: 3
+                
+              }
+            };
+        var rv = new kakao.maps.Roadview(rvContainer, rvOption);
+        var rvClient = new kakao.maps.RoadviewClient();
+        rvClient.getNearestPanoId(rvOption.cne, 50, function(panoId) {
+          rv.setPanoId(panoId, rvOption.cne);
+        });
+      }
+      
+  
+      createMap("map1_{{ forloop.counter }}", {{ location.0 }}, {{ location.1 }});
+      createRoadview("map2_{{ forloop.counter }}", {{ location.0 }}, {{ location.1 }});
+    </script>
+      
+  
+  {% endfor %}
+  
+
+
+
+{% endblock %}
