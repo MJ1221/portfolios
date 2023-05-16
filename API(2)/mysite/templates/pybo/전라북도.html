@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .image-container {
+      position: relative;
+    }
+    .image {
+      position: absolute;
+    }
+    .image:first-child {
+      top: 10px;
+      left: 10px;
+    }
+    .image:last-child {
+      top: 220px;
+      left: 100px;
+    }
+
+    .container {
+      position: absolute;
+      height: 70vh;
+      width: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #my-table {
+      position: absolute;
+      top: 223px;
+      right: -980px;
+    }
+  </style>
+  
+
+
+  <div style="position: absolute" >
+    <img src="{% static 'img\main3.png'%}">
+  </div> 
+
+
+  <div class="container2">
+    <a href="{% url 'green:back'%}">
+      <img src="{% static 'img\back.png'%}">
+    </a>
+  </div>
+
+  <div class="container">
+    <table  width ="1000" height="350"  id= "my-table">
+      <tr align="center">
+      <td style= "padding : 10px">
+        <a href="{% url 'green:farm_nm2'%}?w=고창군">
+          <img src="{% static 'img\전라북도\고창군.png'%}"></a>
+      </td>
+      <td style= "padding : 10px">
+        <a href="{% url 'green:farm_nm2'%}?w=군산시">
+          <img src="{% static 'img\전라북도\군산시.png'%}"></a>
+      </td>
+   
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=김제시">
+           <img src="{% static 'img\전라북도\김제시.png'%}"></a>
+        </td>
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=남원시">
+            <img src="{% static 'img\전라북도\남원시.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=무주군">
+            <img src="{% static 'img\전라북도\무주군.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=부안군">
+            <img src="{% static 'img\전라북도\부안군.png'%}"></a>
+        </td>
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=순창군">
+            <img src="{% static 'img\전라북도\순창군.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=완주군">
+            <img src="{% static 'img\전라북도\완주군.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=익산시">
+            <img src="{% static 'img\전라북도\익산시.png'%}"></a>
+        </td>
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=임실군">
+            <img src="{% static 'img\전라북도\임실군.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=장수군">
+            <img src="{% static 'img\전라북도\장수군.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=전주시">
+            <img src="{% static 'img\전라북도\전주시.png'%}"></a>
+        </td>
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=정읍시">
+            <img src="{% static 'img\전라북도\정읍시.png'%}"></a>
+        </td>
+
+        <td style= "padding : 10px" >
+            <a href="{% url 'green:farm_nm2'%}?w=진안군">
+            <img src="{% static 'img\전라북도\진안군.png'%}"></a>
+        </td>
+      </tr>
+    <div class="container1">
+      <a href="{% url 'green:start'%}">
+        <img src="{% static 'img\home1.png'%}">
+      </a>
+    </div>
+
+{% endblock%}

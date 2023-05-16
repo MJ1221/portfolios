@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+!doctype html>
+<html lang="ko">
+  <style>
+    .screen-transition {
+      animation: slide-in 1.5s forwards;
+    }
+    
+    @keyframes slide-in {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+
+  .pressable {
+    transition: transform 0.1s;
+    }
+  
+  .pressable:active {
+    transform: translateY(50px);
+    }
+
+  .my-div {
+    border: 2px solid red;
+    width: 170px;
+  }
+  .my-div6 {
+    border: 2px solid red;
+    width: 1100px;
+    height: 170px;
+    position: absolute; left: 180px; top: 175px;
+  } 
+  .my-div7 {
+    border: 2px solid red;
+    width: 1100px;
+    height: 170px;
+    position: absolute; left: 180px; top: 350px;
+  } 
+  .my-div8{
+    border: 5px solid red;
+    width: 1100px;
+    height: 180px;
+    position: absolute; left: 180px; top: 525px;
+  } 
+</style>
+
+<head>
+    <div class="my-div6"style= "padding : 10px">
+        <tr>
+          <td style= "width: 50%;">
+            <img src="{% static 'img\fill.png'%}">
+          </td>
+          <td style= "width: 50%;">
+              <img src="{% static 'img\fill.png'%}">
+            </td>
+          </tr>
+            <tr>
+              <td>
+                <img src="{% static 'img\CLN.png'%}"style="width: 350px; height: 150px;">
+              </td>
+              <td>
+                  <img src="{% static 'img\Auto off.png'%}"onclick="alert('Auto를 종료하겠습니다.')"style="width: 350px; height: 150px;">
+                </td>
+                </tr>
+        </div>   
+       
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -250%; left: 50%; transform: translate(-50%, -50%);color: white;">
+                CurrentToolNo.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+              </div>
+            </div>
+        </td>
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -250%; left: 30%; transform: translate(-50%, -50%);color: white;">
+                &nbsp;&nbsp;&nbsp;d<br>2.0000
+              </div>
+            </div>
+        </td>
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -250%; left: -10%; transform: translate(-50%, -50%);color: white;">
+                &nbsp;&nbsp;&nbsp;&nbsp;L1<br>28.0000
+              </div>
+            </div>
+        </td>
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -250%; left: -50%; transform: translate(-50%, -50%);color: white;">
+                &nbsp;&nbsp;&nbsp;&nbsp;L2<br>29.2210
+              </div>
+            </div>
+        </td>
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -250%; left: -70%; transform: translate(-50%, -50%);color: white;">
+                UsingTime<br>&nbsp;00:00:00
+              </div>
+            </div>
+        </td>
+        <td class="my-div7" style="padding: 10px">
+            <div style="position: relative; display: inline-block;">
+              <img src="{% static 'img/fill.png' %}" style="width: 200px; height: 200px;">
+              <div style="position: absolute; top: -350%; left: 500%; transform: translate(-50%, -50%);color: white;">
+                LimitTime<br>&nbsp;30:00
+              </div>
+            </div>
+        </td>
+        <div class="my-div8"style= "padding : 10px">
+          <tr>
+            <td style="width: 50%;">
+              <img src="{% static 'img\play.png'%}"onclick="alert('실행합니다!')">
+            </td>
+            <td style= "width: 50%;">
+                <img src="{% static 'img\Blow.png'%}"style="width: 500px; height: 150px;">
+              </td>
+            </tr>
+              <td>
+                  <img src="{% static 'img\Stop2.png'%}"onclick="alert('중지합니다!')"style="width: 200px; height: 150px;">
+              </td>
+                  </tr>
+                  <tr>
+                    <td style= "width: 50%;">
+                      <img src="{% static 'img\Pause.png'%}"onclick="alert('일시정지합니다')"style="width: 200px; height: 150px;">
+                    </td>
+                  </tr>
+          </div>  
+      </div>    
+       
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+      <!-- pybo CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      <title>Hello, django!</title>
+  </head>
+  <body style="background-color: black;">
+  <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+  <div style="width: 1280px; height: 800px;">
+    <div class="row container" style="height: 100%; width: 100%; margin: 0">
+      <div class="col-sm-4 col-md-8 col-lg-12" style="height: 100%; width: 100%; margin: 0">
+          {% endblock %}
+      </div>
+    </div>
+  </div>
+  <!-- 기본 템플릿 안에 삽입될 내용 End -->
+  <script>
+  </script>
+  </body>

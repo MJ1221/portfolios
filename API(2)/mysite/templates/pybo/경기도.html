@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .image-container {
+      position: relative;
+    }
+    .image {
+      position: absolute;
+    }
+    .image:first-child {
+      top: 10px;
+      left: 10px;
+    }
+    .image:last-child {
+      top: 220px;
+      left: 100px;
+    }
+
+    .container {
+      position: absolute;
+      height: 70vh;
+      width: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #my-table {
+      position: absolute;
+      top: 223px;
+      right: -980px;
+    }
+  </style>
+  
+
+
+  <div style="position: absolute" >
+    <img src="{% static 'img\세부지역1.png'%}">
+  </div> 
+
+  
+  <div class="container2">
+    <a href="{% url 'green:back'%}">
+      <img src="{% static 'img\back.png'%}">
+    </a>
+  </div>
+
+  <div class="container">
+    <table  width ="1000" height="350"  id= "my-table">
+      <tr align="center">
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=가평군">
+            <img src="{% static 'img\경기도\가평군.png'%}"></a>
+      </td>
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=광주시">
+            <img src="{% static 'img\경기도\광주시.png'%}"></a>
+      </td>
+   
+        <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=고양시">
+          <img src="{% static 'img\경기도\고양시.png'%}"></a>
+        </td>
+      
+      </tr>
+      <tr align="center">
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=시흥시">
+            <img src="{% static 'img\경기도\시흥시.png'%}"></a>
+        </td>
+        <td style= "padding : 10px">
+          <a href="{% url 'green:farm_nm2'%}?w=안산시">
+            <img src="{% static 'img\경기도\안산시.png'%}"></a>
+        </td>
+     
+          <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=안성시">
+            <img src="{% static 'img\경기도\안성시.png'%}"></a>
+          </td>
+        </tr>  
+
+      <tr align="center">
+            <td style= "padding : 10px">
+              <a href="{% url 'green:farm_nm2'%}?w=양주시">
+                <img src="{% static 'img\경기도\양주시.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+              <a href="{% url 'green:farm_nm2'%}?w=여주시">
+                <img src="{% static 'img\경기도\여주시.png'%}"></a>
+            </td>
+         
+            <td style= "padding : 10px" ><a href="{% url 'green:farm_nm2'%}?w=연천군">
+                <img src="{% static 'img\경기도\연천군.png'%}"></a>
+              </td>
+            </tr>
+
+        <tr align="center">
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=오산시">
+                  <img src="{% static 'img\경기도\오산시.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=용인시">
+                  <img src="{% static 'img\경기도\용인시.png'%}"></a>
+            </td> 
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=이천시">
+                  <img src="{% static 'img\경기도\이천시.png'%}"></a>
+            </td> 
+        </tr>
+
+        <tr align="center">
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=파주시">
+                <img src="{% static 'img\경기도\파주시.png'%}"></a>
+            </td>
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=평택시">
+                  <img src="{% static 'img\경기도\평택시.png'%}"></a>
+            </td> 
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=포천시">
+                  <img src="{% static 'img\경기도\포천시.png'%}"></a>
+            </td> 
+        </tr>
+
+        <tr align="center">
+            <td style= "padding : 10px">
+                <a href="{% url 'green:farm_nm2'%}?w=화성시">
+                  <img src="{% static 'img\경기도\화성시.png'%}"></a>
+            </td>
+        </tr>
+      <div class="container1">
+        <a href="{% url 'green:start'%}">
+          <img src="{% static 'img\home1.png'%}">
+        </a>
+      </div>      
+{% endblock%}

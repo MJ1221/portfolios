@@ -1,0 +1,150 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+  <style>
+    .screen-transition {
+      animation: slide-in 1.5s forwards;
+    }
+    
+    @keyframes slide-in {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+
+  .pressable {
+    transition: transform 0.1s;
+    }
+  
+  .pressable:active {
+    transform: translateY(50px);
+    }
+
+  .my-div {
+    border: 2px solid red;
+    width: 170px;
+  }
+  .my-div1 {
+    border: 2px solid red;
+    width: 1280px;
+  }  
+  .my-div3 {
+    border: 2px solid red;
+    width: 1000px;
+    height: 700px;
+    position: absolute; left: 500px; top: 175px;
+  } 
+
+  .my-div5 {
+    border: 2px solid red;
+    width: 250px;
+    height: 220px;
+    padding 10px;
+  } 
+  .my-div6 {
+    border: 2px solid red;
+    width: 1000px;
+    height: 300px;
+    position: absolute; left: 180px; top: 350px;
+  } 
+  .my-div7 {
+    border: 2px solid red;
+    width: 300px;
+    height: 50px;
+    position: absolute; left: 180px; top: 250px;
+  } 
+  .my-div8 {
+    border: 2px solid red;
+    width: 1000px;
+    height: 700px;
+    position: absolute; left: 180px; top: 520px;
+  } 
+
+
+</style>
+<head>
+<div  class="my-div1" style="width: 1280px; height: 900px;">
+  <div class="my-div1"style= "padding : 10px" >
+  <tr style= "padding : 10px">
+    <td class="my-div">
+      <a href="{% url 'green:Initialize'%}">
+      <img src="{% static 'img\G-AID1.png'%}">
+      </a>
+    </td>  
+  <td class="my-div"style= "padding : 10px ">
+      <img src="{% static 'img\Auto.png'%}"onclick="alert('Auto을 시작합니다.')">
+    </td>
+     <td class="my-div"style= "padding : 10px">
+      <img src="{% static 'img\Manual.png'%}"onclick="alert('Manual을 열겠습니다.')">
+    </td>
+    <td class="my-div"style= "padding : 10px">
+        <img src="{% static 'img\fill.png'%}">
+      </td>
+      <td class="my-div"style= "padding : 10px">
+          <img src="{% static 'img\fill.png'%}">
+        </td>
+        <td class="my-div"style= "padding : 10px">
+            <img src="{% static 'img\fill.png'%}">
+          </td>
+          <td class="my-div"style= "padding : 10px">
+              <img src="{% static 'img\fill.png'%}">
+            </td>
+    <td class="my-div"style= "padding : 10px">
+        <img src="{% static 'img\Log.png'%}" id="close" >
+      </td>
+    
+  </tr>
+  </div>
+
+  <div class="my-div" style= "padding : 10px">
+    <a href="{% url 'green:Jog'%}">
+      <img src="{% static 'img\Jog.jpg'%}"></a>
+  </div>  
+    <div class="my-div"style= "padding : 10px" >
+      <a href="{% url 'green:Spindle'%}">
+        <img src="{% static 'img\Spindle.png'%}"></a>
+    </div>  
+      <div class="my-div"style= "padding : 10px">
+        <a href="{% url 'green:Tool'%}">
+          <img src="{% static 'img\Tool.png'%}"></a>
+    </div>  
+       <div class="my-div"style= "padding : 10px">
+        <a href="{% url 'green:Maintenance'%}">
+          <img src="{% static 'img\Maintenance.jpg'%}"></a>
+    </div>
+
+    
+ 
+  </div>    
+     
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+    <title>Hello, django!</title>
+</head>
+<body style="background-color: black;">
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<div style="width: 1280px; height: 800px;">
+  <div class="row container" style="height: 100%; width: 100%; margin: 0">
+    <div class="col-sm-4 col-md-8 col-lg-12" style="height: 100%; width: 100%; margin: 0">
+        {% block content %}
+        {% endblock %}
+    </div>
+  </div>
+</div>
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+<script>
+  const close = document.getElementById('close');
+  close.addEventListener("click", function() {
+    alert("종료합니다");
+  });
+</script>
+</body>
+
+

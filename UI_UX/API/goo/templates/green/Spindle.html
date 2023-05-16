@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .my-div10 {
+    width: 300px;
+    height: 50px;
+    position: absolute; left: 100px; top: 0px;
+  } 
+  .my-div11 {
+    border: 2px solid red;
+    width: 1050px;
+    height: 700px;
+    position: absolute; left: 100px; top: 200px;
+  }
+  .my-div12 {
+    border: 2px solid red;
+    width: 520px;
+    height: 130px;
+    position: absolute; left: 530px; top:60px;
+  }
+  .my-div13 {
+    border: 2px solid red;
+    width: 250px;
+    height: 130px;
+    position: absolute; left: 785px; top:190px;
+  }
+  .my-div14 {
+    border: 2px solid red;
+    width: 250px;
+    height: 130px;
+    position: absolute; left: 785px; top:320px;
+  }
+  .my-div15 {
+    border: 2px solid red;
+    width: 250px;
+    height: 90px;
+    position: absolute; left: 785px; top:600px;
+  }
+  .my-div16 {
+    border: 2px solid red;
+    width: 400px;
+    height: 230px;
+    position: absolute; left: 380px; top:190px;
+  }
+  .my-div17 {
+    border: 2px solid red;
+    width: 355px;
+    height: 505px;
+    position: absolute; left: 0px; top:190px;
+  }
+  .my-div18 {
+    border: 2px solid red;
+    width: 355px;
+    height: 105px;
+    position: absolute; left: 0px; top:0px;
+  }
+  .my-div19 {
+    border: 2px solid red;
+    width: 400px;
+    height: 205px;
+    position: absolute; left: 380px; top:450px;
+  }    
+</style>
+<script>
+  function increaseNumber() {
+    var numberInput = document.getElementById("numberInput");
+    var currentValue = parseInt(numberInput.value);
+    numberInput.value = currentValue + 1000;
+  }
+  
+  function decreaseNumber() {
+    var numberInput = document.getElementById("numberInput");
+    var currentValue = parseInt(numberInput.value);
+    if (currentValue > 0) {
+      numberInput.value = currentValue - 1000;
+    }
+  }
+</script>
+  </script>
+<div class="my-div10" >
+    <div  class="my-div11">
+        <div >
+            <div class="my-div18">
+              <body>
+                <span style="color: white;">Max RPM</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text=" id="numberInput" value="30000" style="width: 100px;"><br>
+                <span style="color: white;">Current RPM</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text=" id="numberInput1" value="0" style="width: 100px;"><button type="button" onclick="Numberplus()">▲</button><br>
+                <span style="color: white;">Change RPM</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text=" id="numberInput2" value="1000" style="width: 100px;"> <button type="button" onclick="Numberminus()">▼</button>
+              </body>
+            
+              
+            <div class="my-div12">
+                <img src="{% static 'img\Start.png'%}"onclick="alert('시작합니다.')">
+                    <img src="{% static 'img\Stop.png'%}"onclick="alert('종료합니다.')"><br>
+            </div>
+            <div class="my-div13">   
+                        <img src="{% static 'img\Warmingup.png'%}"onclick="alert('warmingup합니다.')">
+                    </div>
+            </div>
+          </div>
+          
+        <div class="my-div16">
+          <body>
+            <table border="1" width="400" height="200" >
+              <tr>
+                <th></th>
+                <th><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RPM</span></th>
+                <th><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time(min)</span></th>
+              </tr>
+              <tr>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step1</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15,000</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</span></td>
+              </tr>
+              <tr>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step2</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22,500</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</span></td>
+              </tr>
+              <tr>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step3</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27,000</span></td>
+                <td><span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</span></td>
+              </tr>
+            </table>
+          </body>
+        </div>
+        <div class="my-div17">
+          <span style="color: white;"><h1>&nbsp;&nbsp;After - 4 Hours</h1></span>
+              <img src="{% static 'img\white spindle.png'%}"style="width:350px; height:400px;">
+          </div>
+
+            <div class="my-div14">
+                <img src="{% static 'img\w.Stop.png'%}"onclick="alert('warmingup 종료합니다.')"></a>
+            </div>
+            <div class="my-div15">
+                    <img src="{% static 'img\Close.png'%}"onclick="alert('창을 닫게습니다.')" style="width:250px; height:80px;">
+                </div>       
+                <div class="my-div19">
+                
+                  <span style="color: white;">&nbsp;&nbsp;&nbsp;&nbsp;Purge</span>
+
+                </div>
+      </div>
+  </div>
+  <script>
+    const numberInput = document.getElementById('numberInput');
+    const numberInput1 = document.getElementById('numberInput1');
+    var numbercnt = 30000;
+    var numbercnt1 = 0;
+
+    function Numberplus() {
+    numbercnt1= numbercnt1 +1000;
+    numberInput.value = numbercnt;
+    numberInput1.value = numbercnt1;
+    }
+
+    function Numberminus() {
+    if (numbercnt1 != 0) {
+        numbercnt1= numbercnt1 -1000;
+    }
+    numberInput.value = numbercnt;
+    numberInput1.value = numbercnt1;
+    }
+</script>  
+{% endblock %}
+
+
+  
+
+  

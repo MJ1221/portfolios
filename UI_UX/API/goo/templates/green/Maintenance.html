@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="ko">
+  <style>
+    .screen-transition {
+      animation: slide-in 1.5s forwards;
+    }
+    
+    @keyframes slide-in {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+
+  .pressable {
+    transition: transform 0.1s;
+    }
+  
+  .pressable:active {
+    transform: translateY(50px);
+    }
+
+  .my-div {
+    border: 2px solid red;
+    width: 170px;
+  }
+  .my-div6 {
+    border: 2px solid red;
+    width: 200px;
+    height: 700px;
+    position: absolute; left: 180px; top: 175px;
+  } 
+  .my-div7 {
+    border: 2px solid red;
+    width: 240x;
+    height: 700px;
+    position: absolute; left: 380px; top: 175px;
+  } 
+  .my-div8{
+    border: 5px solid red;
+    width: 600px;
+    height: 150px;
+    position: absolute; left: 680px; top: 730px;
+  } 
+
+  
+</style>
+<head>
+    <div class="my-div6"style= "padding : 10px">
+        <tr>
+          <td style= "width: 50%;">
+            <img src="{% static 'img\coolant oil2.png'%}"onclick="alert('오일을 분배합니다.')">
+            <span style="color: #ffffff;" >Coolant Oil</span>
+          </td>
+          <td style= "width: 50%;">
+              <img src="{% static 'img\coolant water2.png'%}"onclick="alert('냉각수를 실행합니다.')">
+              <span  style="color: #ffffff;">Coolant Water</span>
+            </td>
+          </tr>
+            <tr>
+              <td>
+                <img src="{% static 'img\coolant air2.png'%}"onclick="alert('공기식 냉각을 실행합니다.')">
+                <span style="color: #ffffff;" >Coolant Air</span>
+              </td>
+              <td>
+                  <img src="{% static 'img\air blow2.png'%}"onclick="alert('냉각 분사을 실행합니다.')">
+                  <span style="color: #ffffff;" >Coolant Blow</span>
+                </td>
+                </tr>
+                <td>
+                    <img src="{% static 'img\spindle purge.png'%}"onclick="alert('주축 클리닝을 실행합니다.')">
+                    <span style="color: #ffffff;">Spindle purge</span>
+                  </td>
+                  </tr>
+        </div>     
+        <div class="my-div7"style= "padding : 10px">
+          <tr>
+            <td style= "width: 50%;">
+              <img src="{% static 'img\ATC door.png'%}"onclick="alert('도구를 교환합니다.')">
+              <span style="position: relative; top: -10px; left: -170px; color: #ffffff;">ATC Door</span>
+            </td>
+            <td style= "width: 50%;">
+                <img src="{% static 'img\home.png'%}"onclick="alert('HOME으로 이동합니댜.')">
+                <span style="position: relative; top: -10px; left: -170px; color: #ffffff;">HoME</span>
+              </td>
+            </tr>
+                <td>
+                    <img src="{% static 'img\nozzle.png'%}"onclick="alert('분사합니다.')">
+                    <span style="position: relative; top: -10px; left: -170px; color: #ffffff;">Nozzle</span>
+                  </td>
+                  </tr>
+                  <tr>
+                    <td style= "width: 50%;">
+                      <img src="{% static 'img\LED.png'%}"onclick="alert('조명을 선택합니다.')">
+                    </td>
+          </div>  
+          <div class="my-div8"style= "padding : 10px">
+                 <td>
+                      <img src="{% static 'img\Save.png'%}"onclick="alert('저장하겠습니다.')">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td style= "width: 50%;">
+                        <img src="{% static 'img\Close.png'%}"onclick="alert('창을 닫게습니다.')">
+                      </td>
+            </div>  
+    </div>    
+       
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+      <!-- pybo CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+      <title>Hello, django!</title>
+  </head>
+  <body style="background-color: black;">
+  <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+  <div style="width: 1280px; height: 800px;">
+    <div class="row container" style="height: 100%; width: 100%; margin: 0">
+      <div class="col-sm-4 col-md-8 col-lg-12" style="height: 100%; width: 100%; margin: 0">
+          {% endblock %}
+      </div>
+    </div>
+  </div>
+  <!-- 기본 템플릿 안에 삽입될 내용 End -->
+  </body>

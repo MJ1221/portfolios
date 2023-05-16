@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .image-container {
+      position: relative;
+    }
+    .image {
+      position: absolute;
+    }
+    .image:first-child {
+      top: 10px;
+      left: 10px;
+    }
+    .image:last-child {
+      top: 220px;
+      left: 100px;
+    }
+
+    .container {
+      position: absolute;
+      height: 70vh;
+      width: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #my-table {
+      position: absolute;
+      top: 223px;
+      right: -980px;
+    }
+  </style>
+  
+
+
+  <div style="position: absolute" >
+    <img src="{% static 'img\main3.png'%}">
+  </div> 
+
+  
+  <div class="container2">
+    <a href="{% url 'green:back'%}">
+      <img src="{% static 'img\back.png'%}">
+    </a>
+  </div>
+
+  <div class="container">
+    <table  width ="1000" height="200"  id= "my-table">
+      <tr align="center">
+      <td  >
+        <a href="{% url 'green:farm_nm2'%}?w=대덕구">
+          <img src="{% static 'img\대전광역시\대덕구.png'%}"></a>
+      </td>  
+      <td >
+        <a href="{% url 'green:farm_nm2'%}?w=동구">
+          <img src="{% static 'img\대전광역시\동구.png'%}"></a>
+      </td>
+        <td><a href="{% url 'green:farm_nm2'%}?w=유성구">
+          <img src="{% static 'img\대전광역시\유성구.png'%}"></a>
+        </td>
+      </tr>
+
+      <tr align="center">
+        <td><a href="{% url 'green:farm_nm2'%}?w=중구">
+            <img src="{% static 'img\대전광역시\중구.png'%}"></a>
+          </td>
+      </tr>
+    <div class="container1">
+      <a href="{% url 'green:start'%}">
+        <img src="{% static 'img\home1.png'%}">
+      </a>
+    </div>
+
+{% endblock%}
